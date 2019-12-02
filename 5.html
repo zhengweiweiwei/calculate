@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{
+			height:300px;
+			width:300px;
+			background:lightblue;
+		}
+		#up{
+			float:left;
+		}
+		#down{
+			float:left;
+		}
+		#left{
+			float:left;
+		}
+		#right{
+			float:left;
+		}
+		#stop{
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<div id="container" style="margin-left:0px;margin-top:0px;">
+	<button id="up" >向上</button>
+	<button id="down">向下</button>
+	<button id="left">向左</button>
+	<button id="right">向右</button>
+	<button id="stop">停止</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var container=document.getElementById("container");
+	var up=document.getElementById("up");
+	var down=document.getElementById("down");
+	var left=document.getElementById("left");
+	var right=document.getElementById("right");
+	var stop=document.getElementById("stop");
+	var i,j,x,y;
+	up.onclick=function(){
+		clearInterval(j);
+		clearInterval(x);
+		clearInterval(y);
+		i=setInterval(function(){
+				container.style.marginTop=(parseInt(container.style.marginTop)-1)+"px";
+	},100)
+	}
+	down.onclick=function(){
+		clearInterval(i);
+		
+		clearInterval(x);
+		clearInterval(y);
+		j=setInterval(function(){
+				container.style.marginTop=(parseInt(container.style.marginTop)+1)+"px";
+	},100)
+	}
+	left.onclick=function(){
+		clearInterval(i);
+		clearInterval(j);
+		
+		clearInterval(y);
+		x=setInterval(function(){
+				container.style.marginLeft=(parseInt(container.style.marginLeft)-1)+"px";
+	},100)
+	}
+	right.onclick=function(){
+		clearInterval(i);
+		clearInterval(j);
+		clearInterval(x);
+	
+		y=setInterval(function(){
+				container.style.marginLeft=(parseInt(container.style.marginLeft)+1)+"px";
+	},100)
+	}
+	stop.onclick=function(){
+		clearInterval(i);
+		clearInterval(j);
+		clearInterval(x);
+		clearInterval(y);
+	}
+</script>
+</html>
